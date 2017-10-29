@@ -8,7 +8,7 @@ import os
 import csv
 with open('best_params.csv','wb') as write_csv:
 	writer = csv.writer(write_csv, delimiter=',')
-	for file in os.listdir(os.getcwd():
+	for file in os.listdir(os.getcwd()):
 		if file.endswith(".csv"):
 			balance_data = pd.read_csv(os.getcwd()+"/"+str(file), sep= ',')
 
