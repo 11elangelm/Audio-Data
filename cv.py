@@ -8,12 +8,12 @@ import os
 import csv
 with open('best_params.csv','wb') as write_csv:
 	writer = csv.writer(write_csv, delimiter=',')
-	for file in os.listdir(os.getcwd()+"/Image-data (1)"):
+	for file in os.listdir(os.getcwd()):
 		if file.endswith(".csv"):
-			balance_data = pd.read_csv(os.getcwd()+"/Image-data (1)/"+str(file), sep= ',')
+			balance_data = pd.read_csv(os.getcwd()+str(file), sep= ',')
 
-			print "Dataset Lenght:: ", len(balance_data)
-			print "Dataset Shape:: ", balance_data.shape
+			print ("Dataset Lenght:: ", len(balance_data))
+			print ("Dataset Shape:: ", balance_data.shape)
 
 			X = balance_data.values[:,1:12].astype(float)
 			Y = balance_data.values[:,12].astype(float)
